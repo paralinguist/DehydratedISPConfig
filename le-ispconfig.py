@@ -99,7 +99,7 @@ for line in certResult.stdout:
     restartNeeded = True
     break
 
-if restartNeeded or True:
+if restartNeeded:
   print "Changes made - updating config and restarting HTTPD"
   for parent, sites in domains.iteritems():
     #try n except here plox
