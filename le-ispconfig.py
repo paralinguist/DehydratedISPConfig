@@ -111,7 +111,6 @@ if restartNeeded:
 
     with ispconfigDB.cursor() as updateQuery:
       print "Attempting to update ISPConfig..."
-      #TODO: Either fix this to be param'd for the IN clause or run multiple queries
       updateSQL = """
         UPDATE web_domain
         SET `ssl`='y', ssl_cert=?, ssl_key=?, ssl_request='', ssl_bundle=''
