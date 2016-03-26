@@ -114,8 +114,10 @@ if restartNeeded:
       updateSQL = """
         UPDATE web_domain
         SET `ssl`='y', ssl_cert=?, ssl_key=?, ssl_request='', ssl_bundle=''
-        WHERE domain IN (?)"""
-      updateQuery.execute(updateSQL, (certificate, key, "','".join(sites)))
+        WHERE domain IN """
+      updateSQL =updateSQL + "('" + "','".join(sites) + "')"
+      updateQuery.execute(updateSQL, (certificate, key))      
+      
     #TODO: exception handling for symlinking
     for site, details in sites.iteritems():
       if details["path"] != "":
