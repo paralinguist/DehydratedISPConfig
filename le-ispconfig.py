@@ -18,7 +18,7 @@ LE_SH_LOCATION = "./"
 RESTART_HTTPD = ("/usr/sbin/service", "apache2", "restart")
 #(optional) the domain you access ISPConfig's CP with
 #If set, will update the cert for the ISPCOnfig app
-PANEL_DOMAIN = "ihle.in"
+PANEL_DOMAIN = ""
 
 update_tld_names()
 
