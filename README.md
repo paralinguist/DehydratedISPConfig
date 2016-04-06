@@ -35,7 +35,8 @@ Create `letsencrypt.conf` in the apache conf folders (usually `/etc/apache2/conf
   <LocationMatch "/.well-known/acme-challenge/*">  
     Header set Content-Type "text/plain"  
   </LocationMatch>  
-</IfModule>```  
+</IfModule>
+```  
 Enable the config:  
 `a2enconf letsencrypt`  
 Restart Apache:  
