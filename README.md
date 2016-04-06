@@ -26,7 +26,8 @@ CONTACT_EMAIL="you@example.com"
 
 ### Apache Config
 Create `letsencrypt.conf` in the apache conf folders (usually `/etc/apache2/conf-available/`):
-```Alias "/.well-known/acme-challenge/" /var/le-ispconfig/  
+```apacheconf
+Alias "/.well-known/acme-challenge/" /var/le-ispconfig/  
 <Directory /var/le-ispconfig>  
   Require all granted  
 </Directory>  
