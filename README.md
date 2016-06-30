@@ -6,8 +6,8 @@ Provides LE to ISPConfig hosted sites, including master/slave
 2. oursql: pip install oursql  
 3. tld:    pip install tld  
 
-### config.sh
-Create a config.sh file in the letsencrypt.sh directory with the following contents:  
+### config
+Create a file called config in the letsencrypt.sh directory with the following contents:  
 __IMPORTANT__ Make sure you set the email correctly.
 ```bash
 ####WARNING#####
