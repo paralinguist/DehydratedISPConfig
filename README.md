@@ -1,13 +1,14 @@
-# LetsEncryptISPConfig
-Provides LE to ISPConfig hosted sites, including master/slave
+# DehydratedISPConfig
+Provides Let's Encrypt certificates to ISPConfig hosted sites, including master/slave
+SHOULD NO LONGER BE NEEDED NOW ISPConfig PROVIDES NATIVE SUPPORT IN VERSION > 3.1
 
 ## Requirements:
-1. letsencrypt.sh: git clone https://github.com/lukas2511/letsencrypt.sh  
+1. dehydrated: git clone https://github.com/paralinguist/DehydratedISPConfig 
 2. oursql: pip install oursql  
 3. tld:    pip install tld  
 
 ### config
-Create a file called config in the letsencrypt.sh directory with the following contents:  
+Create a file called config in the dehydrated directory with the following contents:  
 __IMPORTANT__ Make sure you set the email correctly.
 ```bash
 ####WARNING#####
@@ -25,7 +26,7 @@ CONTACT_EMAIL="you@example.com"
 `mkdir /var/le-ispconfig`  
 
 ### Apache Config
-Create `letsencrypt.conf` in the apache conf folders (usually `/etc/apache2/conf-available/`):
+Create `dehydrated_isp.conf` in the apache conf folders (usually `/etc/apache2/conf-available/`):
 ```apacheconf
 Alias "/.well-known/acme-challenge/" /var/le-ispconfig/  
 <Directory /var/le-ispconfig>  
@@ -39,6 +40,6 @@ Alias "/.well-known/acme-challenge/" /var/le-ispconfig/
 </IfModule>
 ```  
 Enable the config:  
-`a2enconf letsencrypt`  
+`a2enconf dehydrated_isp`  
 Restart Apache:  
 `service apache2 restart`
